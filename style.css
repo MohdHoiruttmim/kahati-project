@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
 
 * {
   margin: 0;
@@ -6,11 +6,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Space Grotesk", sans-serif;
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* === HERO SECTION === */
@@ -49,6 +55,12 @@ body {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.lottie-animation {
+  width: 100px;
+  height: 100px;
+  display: block;
 }
 
 .subtitle {
@@ -118,10 +130,11 @@ h1 span {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(16,24,40,0.07);
   border: 1px solid rgba(16,24,40,0.04);
-  transition: transform 350ms cubic-bezier(.2,.9,.3,1), box-shadow 350ms, filter 350ms;
+  transition: transform 350ms cubic-bezier(.2,.9,.3,1), box-shadow 350ms;
   position: relative;
   will-change: transform;
   animation: cardPop .6s cubic-bezier(.2,.9,.3,1) both;
+  contain: layout style;
 }
 
 .card-media {
@@ -334,10 +347,11 @@ left: 7px;
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: #fff;
-  transition: all 280ms cubic-bezier(.2,.9,.3,1);
+  transition: background 280ms cubic-bezier(.2,.9,.3,1), transform 280ms cubic-bezier(.2,.9,.3,1), box-shadow 280ms;
   text-decoration: none;
   border: 2px solid rgba(255,255,255,0.2);
   font-size: 20px;
+  contain: paint;
 }
 
 .social-icon:hover,
